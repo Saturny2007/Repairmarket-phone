@@ -1,0 +1,545 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(255, 255, 255)
+}
+nav a:hover {
+  color: black
+}
+main {
+    margin-top: 20px;
+}
+header h1 {
+    text-align: center;
+}
+
+.btn {
+    width: 7.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   }
+   
+   button:hover {
+    color: rgb(0, 0, 0);
+   }
+   .btn:hover a {
+    color: black; /* Change la couleur du texte à noir */
+   } 
+   
+   button:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+   }
+   button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+   }
+
+
+   /* Conteneur général */
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* Style des cartes (cases) */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  padding: 20px
+}
+
+/* Effet au survol */
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Image dans la carte */
+.card-img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Titre du produit */
+.card-title {
+  font-size: 1.5rem;
+  margin: 15px 0;
+}
+
+/* Description du produit */
+.card-description {
+  font-size: 1rem;
+  color: #555;
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+/* Bouton Acheter */
+.card-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+/* Pour les écrans de taille inférieure à 600px (smartphones) */
+@media (max-width: 600px) {
+  body {
+      padding: 10px;
+  }
+  
+  header h1 {
+      font-size: 1.5rem; /* Réduit la taille du titre */
+  }
+
+  nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .btn {
+      width: 100%; /* Les boutons prennent toute la largeur */
+      height: 3em; /* Augmente légèrement la hauteur pour plus de clarté */
+      font-size: 1rem; /* Taille de texte plus petite pour les boutons */
+  }
+
+  /* Les cartes produits s'ajustent mieux aux petits écrans */
+  .container {
+      display: block;
+  }
+  
+  .card {
+      width: 100%; /* Prend toute la largeur de l'écran */
+      margin: 10px 0;
+  }
+  
+  .card-title {
+      font-size: 1.2rem;
+  }
+
+  .card-button {
+      width: 100%; /* Le bouton d'achat prend toute la largeur */
+  }
+}
+img, .card-img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+/* From Uiverse.io by akshat-patel28 */ 
+.form-container {
+  width: 350px;
+  height: 405px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 10px 0 30px 0;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.input {
+  border-radius: 20px;
+  border: 1px solid #c0c0c0;
+  outline: 0 !important;
+  box-sizing: border-box;
+  padding: 12px 15px;
+}
+
+.page-link {
+  text-decoration: underline;
+  margin: 0;
+  text-align: end;
+  color: #747474;
+  text-decoration-color: #747474;
+}
+
+.page-link-label {
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.page-link-label:hover {
+  color: #000;
+}
+
+.form-btn {
+  padding: 10px 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 20px;
+  border: 0 !important;
+  outline: 0 !important;
+  background: teal;
+  color: white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form-btn:active {
+  box-shadow: none;
+}
+
+.sign-up-label {
+  margin: 0;
+  font-size: 10px;
+  color: #747474;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sign-up-link {
+  margin-left: 1px;
+  font-size: 11px;
+  text-decoration: underline;
+  text-decoration-color: teal;
+  color: teal;
+  cursor: pointer;
+  font-weight: 800;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.buttons-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+
+/* From Uiverse.io by gharsh11032000 */ 
+.form-container {
+  max-width: 400px;
+  background-color: #fff;
+  padding: 22px 14px;
+  font-size: 17px;
+  font-family: inherit;
+  color: #212121;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+}
+
+.form-container button:active {
+  scale: 0.95;
+}
+
+.form-container .logo-container {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container .form-group input {
+  width: 100%;
+  padding: 12px 1px;
+  border-radius: 6px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+}
+
+.form-container .form-group input::placeholder {
+  opacity: 0.5;
+}
+
+.form-container .form-group input:focus {
+  outline: none;
+  border-color: #1778f2;
+}
+
+.form-container .form-submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  color: #fff;
+  background-color: #212121;
+  border: none;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: inherit;
+  gap: 8px;
+  margin: 12px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+}
+
+.form-container .form-submit-btn:hover {
+  background-color: #313131;
+}
+
+.form-container .link {
+  color: #1778f2;
+  text-decoration: none;
+}
+
+.form-container .signup-link {
+  align-self: center;
+  font-weight: 500;
+}
+
+.form-container .signup-link .link {
+  font-weight: 400;
+}
+
+.form-container .link:hover {
+  text-decoration: underline;
+}
+
+.formulaire {
+  background-color: lightgrey;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #e8e8e8;
+  width: 315px;
+  margin: auto;
+  height: 200px;
+  }
+  
+  .formulaire:hover{
+   box-shadow: -18px 12px 24px -10px #C4C4C4;  
+  }
+
+  input{
+    height: 40px;
+    width: 306px;
+  }
+
+  .btn1{
+    width: 300px;
+  }
+
+  .Input1{
+    height: 47px;
+  }
+  
+  .title1{
+    margin: auto;
+  }
+
+  .carre {
+    width: 1000px;
+    height: 1000px;
+    background-color: rgb(0, 0, 0); /* Couleur de fond */
+    margin: 20px auto; /* Centrer le carré horizontalement */
+    background-color: #ffffff;
+    border: 5px solid rgb(0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px; /* Espace entre les cases */
+  width: 100%; /* S'adapte au carré du site */
+  height: 100%; /* S'adapte au carré du site */
+  max-width: 1000px; /* Définir une taille maximale si nécessaire */
+  max-height: 1000px; /* Définir une taille maximale si nécessaire */
+}
+
+.grid-item {
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
+nav button {
+  background-color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+nav button:hover {
+  background-color: #ddd;
+}
+
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #555;
+}
+
+.contact-info {
+  margin-top: 30px;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.contact-info h2 {
+  margin-top: 0;
+}

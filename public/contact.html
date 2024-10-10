@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Boutique RepairMarket</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button class="btn" onclick="location.href='index.html'">Accueil</button>
+            <button class="btn" onclick="location.href='Revendre.html'">Revendre</button>
+            <button class="btn" onclick="location.href='contact.html'">Contact</button>
+            <button class="btn" onclick="location.href='Connexion.html'">Connexion</button>
+            <button class="btn" onclick="location.href='Panier.html'">Panier</button>
+        </nav>
+    </header>
+    <main>
+        <h1>Contactez-nous</h1>
+        <p>Pour toute question ou information, veuillez remplir le formulaire ci-dessous :</p>
+
+        <form action="traitement_formulaire.php" method="post">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+            <br>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+
+            <label for="sujet">Sujet :</label>
+            <input type="text" id="sujet" name="sujet" required>
+            <br>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <br>
+
+            <button class=btnh type="submit">Envoyer</button>
+        </form>
+
+        <div class="contact-info">
+            <h2>Informations de contact</h2>
+            <p>Adresse : 123 Rue de la Boutique, 75001 Paris</p>
+            <p>Téléphone : +33 1 23 45 67 89</p>
+            <p>Email : support@repairmarket.com</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>2024 RepairMarket. Tous droits réservés.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
