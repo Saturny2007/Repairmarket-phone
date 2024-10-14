@@ -414,7 +414,7 @@ img, .card-img {
     background-color: rgb(0, 0, 0); /* Couleur de fond */
     margin: 20px auto; /* Centrer le carré horizontalement */
     background-color: #ffffff;
-    border: 5px solid rgb(0, 0, 0);
+    border: 5px solid rgb(255, 255, 255);
 }
 
 
@@ -439,11 +439,11 @@ img, .card-img {
 }
 
 .grid-item {
-  background-color: lightgray;
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #000;
+  border: 10px solid #000;
 }
 
 
@@ -542,4 +542,11 @@ button[type="submit"]:hover {
 
 .contact-info h2 {
   margin-top: 0;
+}
+
+
+
+
+h2{
+  text-align: center;
 }
