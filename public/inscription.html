@@ -18,16 +18,35 @@
             <button class="btn" onclick="location.href='Panier.html'">Panier</button>
         </nav>
     </header>
-    <script src="js/main.js"></script>
-<head>
-    <div class="formulaire">
-        <label>
-          email
-        </label>
-        <input type="email" value="toto@bidule.com">
-        <input type="password" value="MDP">
-        <button class="btn" >Valider</button>
-    </div>
-</head>
+    <main>
+        <div class="formulaire">
+            <form id="registrationForm" class="form" action="/api/register" method="POST">
+                <input type="email" name="email" class="input Input1" placeholder="Email" required>
+                <input type="password" name="password" class="input Input1" placeholder="Mot de Passe" required>
+                <button class="btn btn1" type="submit">S'inscrire</button>
+            </form>
+            <div id="message" class="message"></div> <!-- Div pour afficher les messages -->
+        </div>
+    </main>
+    <script>
+        document.getElementById('registrationForm').onsubmit = async function (event) {
+            event.preventDefault(); // Empêche la soumission par défaut
+            const formData = new FormData(this);
+            const response = await fetch(this.action, {
+                method: this.method,
+                body: formData,
+            });
+
+            const messageDiv = document.getElementById('message');
+            if (response.ok) {
+                const data = await response.json();
+                messageDiv.textContent = data.message || 'Inscription réussie!';
+                messageDiv.style.color = 'green';
+            } else {
+                const errorText = await response.text();
+                messageDiv.textContent = errorText || 'Erreur lors de l\'inscription.';
+                messageDiv.style.color = 'red';
+            }
+        };
+    </script>
 </body>
-</html>
