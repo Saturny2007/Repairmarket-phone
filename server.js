@@ -28,6 +28,25 @@ db.serialize(() => {
     )`);
 });
 
+// Route pour gérer le formulaire de contact
+app.post('/api/contact', (req, res) => {
+    const { nom, email, sujet, message } = req.body;
+
+    if (!nom || !email || !sujet || !message) {
+        return res.status(400).send('Tous les champs sont requis');
+    }
+
+    const query = `INSERT INTO contacts (nom, email, sujet, message) VALUES (?, ?, ?, ?)`;
+    db.run(query, [nom, email, sujet, message], function (err) {
+        if (err) {
+            return res.status(500).send('Erreur lors de l\'enregistrement du message');
+        }
+
+        res.json({ message: 'Merci, votre message a été envoyé avec succès.' });
+    });
+});
+
+
 // Route pour gérer l'inscription
 app.post('/api/register', async (req, res) => {
     const { email, password } = req.body;

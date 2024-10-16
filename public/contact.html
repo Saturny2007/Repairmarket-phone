@@ -22,26 +22,25 @@
         <h1>Contactez-nous</h1>
         <p>Pour toute question ou information, veuillez remplir le formulaire ci-dessous :</p>
 
-        <form action="traitement_formulaire.php" method="post">
+        <form action="/api/contact" method="post">
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
             <br>
-
+        
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
             <br>
-
+        
             <label for="sujet">Sujet :</label>
             <input type="text" id="sujet" name="sujet" required>
             <br>
-
+        
             <label for="message">Message :</label>
             <textarea id="message" name="message" rows="5" required></textarea>
             <br>
-
-            <button class=btnh type="submit">Envoyer</button>
-        </form>
-
+        
+            <button class="btnh" type="submit">Envoyer</button>
+        </form>        
         <div class="contact-info">
             <h2>Informations de contact</h2>
             <p>Adresse : 123 Rue de la Boutique, 75001 Paris</p>
@@ -54,5 +53,35 @@
         <p>2024 RepairMarket. Tous droits réservés.</p>
     </footer>
     <script src="js/main.js"></script>
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+    
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+    
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+    
+                if (response.ok) {
+                    const result = await response.json();
+                    alert(result.message);
+                } else {
+                    alert('Erreur lors de l\'envoi du message.');
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Erreur lors de l\'envoi du message.');
+            }
+        });
+    </script>
+    
 </body>
 </html>
