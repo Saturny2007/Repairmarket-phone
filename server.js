@@ -3,6 +3,7 @@ const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 const bcrypt = require('bcrypt'); // Pour hasher les mots de passe
 const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer'); // Importez Nodemailer
 
 const app = express();
 const PORT = 3000;
@@ -28,6 +29,15 @@ db.serialize(() => {
     )`);
 });
 
+// Configurez le transporteur Nodemailer
+const transporter = nodemailer.createTransport({
+    service: 'gmail', // Utilisez le service de votre choix
+    auth: {
+        user: 'votre_email@gmail.com', // Remplacez par votre adresse email
+        pass: 'votre_mot_de_passe' // Remplacez par votre mot de passe ou un mot de passe d'application
+    }
+});
+
 // Route pour gérer le formulaire de contact
 app.post('/api/contact', (req, res) => {
     const { nom, email, sujet, message } = req.body;
@@ -45,7 +55,6 @@ app.post('/api/contact', (req, res) => {
         res.json({ message: 'Merci, votre message a été envoyé avec succès.' });
     });
 });
-
 
 // Route pour gérer l'inscription
 app.post('/api/register', async (req, res) => {
@@ -68,7 +77,6 @@ app.post('/api/register', async (req, res) => {
         }
     });
 });
-
 
 // Route pour la connexion
 app.post('/api/login', (req, res) => {
@@ -106,6 +114,45 @@ app.get('/api/products', (req, res) => {
         } else {
             res.json(rows);
         }
+    });
+});
+
+// Route pour réinitialiser le mot de passe
+app.post('/api/reset-password', async (req, res) => {
+    const { email } = req.body;
+
+    // Vérifiez si l'utilisateur existe
+    const user = await new Promise((resolve, reject) => {
+        db.get(`SELECT * FROM users WHERE email = ?`, [email], (err, user) => {
+            if (err) {
+                console.error('Erreur lors de la recherche de l\'utilisateur:', err);
+                return reject(err);
+            }
+            resolve(user);
+        });
+    });
+
+    if (!user) {
+        return res.status(400).send('Email non trouvé');
+    }
+
+    // Créez un lien de réinitialisation (modifiez selon vos besoins)
+    const resetLink = `http://votre_site.com/reset-password?token=${user.id}`; // Remplacez avec un vrai jeton de sécurité
+
+    // Logique pour envoyer l'email de réinitialisation
+    const mailOptions = {
+        from: 'votre_email@gmail.com',
+        to: email,
+        subject: 'Réinitialisation de votre mot de passe',
+        text: `Cliquez sur ce lien pour réinitialiser votre mot de passe : ${resetLink}`
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error('Erreur lors de l\'envoi de l\'email:', error);
+            return res.status(500).send('Erreur lors de l\'envoi de l\'email');
+        }
+        res.status(200).send('Email de réinitialisation envoyé');
     });
 });
 

@@ -382,9 +382,9 @@ img, .card-img {
   padding: 20px;
   border-radius: 10px;
   border: 2px solid #e8e8e8;
-  width: 315px;
+  width: 325px;
   margin: auto;
-  height: 200px;
+  height: 270px;
   }
   
   .formulaire:hover{
@@ -550,12 +550,6 @@ button[type="submit"]:hover {
 h2{
   text-align: center;
 }
-
-
-
-
-
-
 
 
 
