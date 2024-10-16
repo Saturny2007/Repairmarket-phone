@@ -5,6 +5,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boutique RepairMarket</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+header {
+    background: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    width: 10.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+main {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.add-to-cart {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .add-to-cart:hover {
+            background-color: #0056b3;
+        }
+
+.info {
+    background-color: #e0ecff;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.info p {
+    margin: 0;
+}
+
+    </style>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -18,6 +115,33 @@
             <button class="btn" onclick="location.href='Panier.html'">Panier</button>
         </nav>
     </header>
+
+    <main>
+        <section>
+            <h2>Votre appareil</h2>
+            <form>
+                <label for="brand">Quelle est la marque de votre smartphone ?</label>
+                <select id="brand" name="brand">
+                    <option value="Playstation">Playstation</option>
+                    <option value="Xbox">Xbox</option>
+                    <!-- Ajoutez d'autres marques ici -->
+                </select>
+
+                <label for="model">Quel est le modèle exact de votre appareil ?</label>
+                <select id="model" name="model">
+                    <option value="">Choisissez un modèle...</option>
+                    <option value="16 pro max"> Iphone 16 pro max</option>
+                    <option value="16 pro">Iphone 16 pro</option>
+                    <option value="16 plus">Iphone 16 plus</option>
+                    <option value="16">Iphone 16</option>
+                    <!-- Les modèles seront ajoutés dynamiquement en fonction de la marque sélectionnée -->
+                </select>
+                <button class="add-to-cart">Revendre</button>
+            </form>
+        </section>
+    </main>
+
     <script src="js/main.js"></script>
 </body>
+
 </html>
