@@ -69,6 +69,7 @@ app.post('/api/register', async (req, res) => {
     });
 });
 
+
 // Route pour la connexion
 app.post('/api/login', (req, res) => {
     const { email, password } = req.body;
