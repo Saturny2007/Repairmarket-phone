@@ -120,21 +120,25 @@ select {
         <section>
             <h2>Votre appareil</h2>
             <form>
-                <label for="brand">Quelle est la marque de votre smartphone ?</label>
+                <label for="brand">Quel est le modèle exact de votre appareil ?</label>
                 <select id="brand" name="brand">
-                    <option value="apple">Apple</option>
-                    <option value="samsung">Samsung</option>
-                    <option value="huawei">Huawei</option>
+                    <option value="apple">MacBook</option>
+                    <option value="samsung">MacBook Air</option>
+                    <option value="huawei">MacBook Pro</option>
                     <!-- Ajoutez d'autres marques ici -->
                 </select>
 
-                <label for="model">Quel est le modèle exact de votre appareil ?</label>
+                <label for="model">Quelle est la taille de l'écran ?</label>
                 <select id="model" name="model">
-                    <option value="">Choisissez un modèle...</option>
-                    <option value="16 pro max"> Iphone 16 pro max</option>
-                    <option value="16 pro">Iphone 16 pro</option>
-                    <option value="16 plus">Iphone 16 plus</option>
-                    <option value="16">Iphone 16</option>
+                    <option value="16 pro max"> 12"</option>
+                    <!-- Les modèles seront ajoutés dynamiquement en fonction de la marque sélectionnée -->
+                </select>
+
+                <label for="model">À quelle date est sorti votre appareil ?</label>
+                <select id="model" name="model">
+                    <option value="16 pro max"> Mi-2017</option>
+                    <option value="16 pro max"> Début 2016</option>
+                    <option value="16 pro max"> Début 2015</option>
                     <!-- Les modèles seront ajoutés dynamiquement en fonction de la marque sélectionnée -->
                 </select>
 
