@@ -13,6 +13,7 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
 // Créer ou ouvrir la base de données SQLite
 const db = new sqlite3.Database('database.sqlite', (err) => {
     if (err) {
@@ -155,6 +156,7 @@ app.post('/api/reset-password', async (req, res) => {
         res.status(200).send('Email de réinitialisation envoyé');
     });
 });
+
 // Démarrer le serveur
 app.listen(PORT, () => {
     console.log(`Serveur en cours d'exécution sur http://localhost:${PORT}`);

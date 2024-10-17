@@ -7,10 +7,10 @@
     <title>Boutique RepairMarket</title>
     <style>
 body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 20px;
-background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #ffffff;
 }
 
 header {
@@ -115,7 +115,7 @@ select {
     <main>
         <section>
             <h2>Votre appareil</h2>
-            <form>
+            <form id="sell-form">
                 <label for="brand">Quelle est la marque de votre smartphone ?</label>
                 <select id="brand" name="brand">
                     <option value="">Choisissez une marque...</option>
@@ -127,15 +127,17 @@ select {
                 <select id="model" name="model">
                     <option value="">Choisissez une famille...</option>
                 </select>
-                <button class="add-to-cart">Revendre</button>
+                <button type="submit"class="add-to-cart">Revendre</button>
             </form>
         </section>
     </main>
 
+    <!-- Ajoutez le code JavaScript ici -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const brandSelect = document.getElementById('brand');
             const modelSelect = document.getElementById('model');
+            const form = document.getElementById('sell-form');
 
             const models = {
                 'Samsung': ['S24', 'S24 ULTRA', 'S24+'],
@@ -157,9 +159,44 @@ select {
                     });
                 }
             });
+
+            // Gestion de l'envoi du formulaire
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Empêche le rechargement de la page
+
+                const brand = brandSelect.value;
+                const model = modelSelect.value;
+
+                if (!brand || !model) {
+                    alert('Veuillez sélectionner une marque et un modèle');
+                    return;
+                }
+
+                // Envoie les données au serveur
+                fetch('/api/save-device', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ brand, model })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erreur lors de l\'envoi des données');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    alert(data.message);
+                    form.reset(); // Réinitialise le formulaire après envoi réussi
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                    alert('Une erreur s\'est produite lors de l\'enregistrement de l\'appareil.');
+                });
+            });
         });
     </script>
 </body>
 
 </html>
-
