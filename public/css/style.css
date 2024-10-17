@@ -167,6 +167,7 @@ header h1 {
       width: 100%; /* Le bouton d'achat prend toute la largeur */
   }
 }
+
 img, .card-img {
   max-width: 100%;
   height: auto;
