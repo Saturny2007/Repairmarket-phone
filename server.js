@@ -155,7 +155,6 @@ app.post('/api/reset-password', async (req, res) => {
         res.status(200).send('Email de réinitialisation envoyé');
     });
 });
-
 // Démarrer le serveur
 app.listen(PORT, () => {
     console.log(`Serveur en cours d'exécution sur http://localhost:${PORT}`);
