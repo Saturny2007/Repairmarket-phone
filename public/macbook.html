@@ -6,18 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boutique RepairMarket</title>
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f9;
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 20px;
+background-color: #ffffff;
 }
 
 header {
     background: #ffffff;
     padding: 10px 0;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn {
@@ -50,7 +49,6 @@ main {
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -85,9 +83,9 @@ select {
             border-radius: 5px;
         }
 
-.add-to-cart:hover {
-    background-color: #0056b3;
-}
+        .add-to-cart:hover {
+            background-color: #0056b3;
+        }
 
 .info {
     background-color: #e0ecff;
@@ -100,9 +98,7 @@ select {
 .info p {
     margin: 0;
 }
-
     </style>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -120,39 +116,52 @@ select {
         <section>
             <h2>Votre appareil</h2>
             <form>
-                <label for="brand">Quel est le modèle exact de votre appareil ?</label>
+                <label for="brand"> Quel est le modèle exact de votre appareil ?</label>
                 <select id="brand" name="brand">
-                    <option value="apple">MacBook</option>
-                    <option value="samsung">MacBook Air</option>
-                    <option value="huawei">MacBook Pro</option>
-                    <!-- Ajoutez d'autres marques ici -->
+                    <option value="">Choisissez un modèle...</option>
+                    <option value="MacBook">MacBook</option>
+                    <option value="MacBook Pro">MacBook Pro</option>
+                    <option value="MacBook Air">MacBook Air</option>
                 </select>
 
                 <label for="model">Quelle est la taille de l'écran ?</label>
                 <select id="model" name="model">
-                    <option value="16 pro max"> 12"</option>
-                    <!-- Les modèles seront ajoutés dynamiquement en fonction de la marque sélectionnée -->
+                    <option value="">Choisissez la taille de l'écran...</option>
                 </select>
-
-                <label for="model">À quelle date est sorti votre appareil ?</label>
-                <select id="model" name="model">
-                    <option value="16 pro max"> Mi-2017</option>
-                    <option value="16 pro max"> Début 2016</option>
-                    <option value="16 pro max"> Début 2015</option>
-                    <!-- Les modèles seront ajoutés dynamiquement en fonction de la marque sélectionnée -->
-                </select>
-
-                <div class="info">
-                    <p>📌 Trouvez votre modèle, la taille de l’écran et la date de sortie :<br>
-                        Allez dans le menu Apple et sélectionnez "À propos de ce Mac".<br>
-                        Si votre modèle ne se trouve pas dans la liste, c'est qu'il n'est pas encore éligible au service Reprise.</p>
-                </div>
                 <button class="add-to-cart">Revendre</button>
             </form>
         </section>
     </main>
 
-    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const brandSelect = document.getElementById('brand');
+            const modelSelect = document.getElementById('model');
+
+            const models = {
+                'MacBook': ['12"'],
+                'MacBook Pro': ['13"', '14"', '15"', '16"'],
+                'MacBook Air': ['11"', '13"', '15"'],
+            };
+
+            brandSelect.addEventListener('change', function() {
+                // Efface les options existantes
+                modelSelect.innerHTML = '<option value="">Choisissez un modèle...</option>';
+                
+                // Récupère les modèles pour la marque sélectionnée
+                const selectedBrand = brandSelect.value;
+                if (models[selectedBrand]) {
+                    models[selectedBrand].forEach(function(model) {
+                        const option = document.createElement('option');
+                        option.value = model;
+                        option.textContent = model;
+                        modelSelect.appendChild(option);
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
+

@@ -6,18 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boutique RepairMarket</title>
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f9;
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 20px;
+background-color: #ffffff;
 }
 
 header {
     background: #ffffff;
     padding: 10px 0;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn {
@@ -50,7 +49,6 @@ main {
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -100,9 +98,7 @@ select {
 .info p {
     margin: 0;
 }
-
     </style>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -120,26 +116,54 @@ select {
         <section>
             <h2>Votre appareil</h2>
             <form>
-                <label for="brand">Quelle est la marque de votre smartphone ?</label>
+                <label for="brand">Quelle est la marque de votre console ?</label>
                 <select id="brand" name="brand">
+                    <option value="">Choisissez une marque...</option>
                     <option value="Playstation">Playstation</option>
                     <option value="Xbox">Xbox</option>
-                    <!-- Ajoutez d'autres marques ici -->
+                    <option value="Nintendo">Nintendo</option>
+                    <option value="Anbernic">Anbernic</option> <!-- Nouvelle marque ajoutée -->
                 </select>
 
-                <label for="model">Quel est le modèle exact de votre appareil ?</label>
+                <label for="model">Quel est le modèle exact de votre console ?</label>
                 <select id="model" name="model">
                     <option value="">Choisissez un modèle...</option>
-                    <option value="PS5">PS5</option>
-                    <option value="PS4">PS4</option>
-                    <!-- Les modèles seront ajoutés dynamiquement en fonction de la marque sélectionnée -->
                 </select>
                 <button class="add-to-cart">Revendre</button>
             </form>
         </section>
     </main>
 
-    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const brandSelect = document.getElementById('brand');
+            const modelSelect = document.getElementById('model');
+
+            const models = {
+                'Playstation': ['PS4', 'PS5'],
+                'Xbox': ['Xbox 360', 'Xbox One'],
+                'Nintendo': ['Switch', 'Wii U', '3DS'],
+                'Anbernic': ['Anbernic RG353PS']
+            };
+
+            brandSelect.addEventListener('change', function() {
+                // Efface les options existantes
+                modelSelect.innerHTML = '<option value="">Choisissez un modèle...</option>';
+                
+                // Récupère les modèles pour la marque sélectionnée
+                const selectedBrand = brandSelect.value;
+                if (models[selectedBrand]) {
+                    models[selectedBrand].forEach(function(model) {
+                        const option = document.createElement('option');
+                        option.value = model;
+                        option.textContent = model;
+                        modelSelect.appendChild(option);
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
+

@@ -6,18 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boutique RepairMarket</title>
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f9;
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 20px;
+background-color: #ffffff;
 }
 
 header {
     background: #ffffff;
     padding: 10px 0;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn {
@@ -50,7 +49,6 @@ main {
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -100,9 +98,7 @@ select {
 .info p {
     margin: 0;
 }
-
     </style>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -120,43 +116,28 @@ select {
         <section>
             <h2>Votre appareil</h2>
             <form>
-                <label for="brand">Quelle est la marque de votre smartphone ?</label>
+                <label for="brand"></label>
                 <select id="brand" name="brand">
-                    <option value="apple">Apple</option>
-                    <!-- Ajoutez d'autres marques ici -->
+                    <option value="Iphone">Iphone</option>
                 </select>
 
                 <label for="model">Quel est le modèle exact de votre appareil ?</label>
                 <select id="model" name="model">
                     <option value="">Choisissez un modèle...</option>
-                    <option value="16 pro max"> Iphone 16 pro max</option>
-                    <option value="16 pro">Iphone 16 pro</option>
-                    <option value="16 plus">Iphone 16 plus</option>
-                    <option value="16">Iphone 16</option>
-                    <option value="15 pro max"> Iphone 15 pro max</option>
-                    <option value="15 pro">Iphone 15 pro</option>
-                    <option value="15 plus">Iphone 15 plus</option>
-                    <option value="15">Iphone 15</option>
-                    <option value="14 pro max"> Iphone 14 pro max</option>
-                    <option value="14 pro">Iphone 14 pro</option>
-                    <option value="14">Iphone 14</option>
-                    <option value="13 pro max"> Iphone 13 pro max</option>
-                    <option value="13 pro">Iphone 13 pro</option>
-                    <option value="13">Iphone 13</option>
-                    <!-- Les modèles seront ajoutés dynamiquement en fonction de la marque sélectionnée -->
+                    <option value="">16 Pro Max</option>
+                    <option value="">16 Pro</option>
+                    <option value="">16 Plus</option>
+                    <option value="">16</option>
+                    <option value="">15 Pro Max</option>
+                    <option value="">15 Pro</option>
+                    <option value="">15 Plus</option>
+                    <option value="">15</option>
                 </select>
-
-                <div class="info">
-                    <p>📌 Trouver votre modèle et sa capacité de stockage :<br>
-                    "Réglages" > "Général" > "Informations".<br>
-                    Si votre modèle ne se trouve pas dans la liste, c'est qu'il n'est pas encore éligible au service Reprise.</p>
-                </div>
                 <button class="add-to-cart">Revendre</button>
             </form>
         </section>
     </main>
-
-    <script src="js/main.js"></script>
 </body>
 
 </html>
+
