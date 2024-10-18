@@ -159,43 +159,8 @@ select {
                     });
                 }
             });
-
-            // Gestion de l'envoi du formulaire
-            form.addEventListener('submit', function(event) {
-                event.preventDefault(); // Empêche le rechargement de la page
-
-                const brand = brandSelect.value;
-                const model = modelSelect.value;
-
-                if (!brand || !model) {
-                    alert('Veuillez sélectionner une marque et un modèle');
-                    return;
-                }
-
-                // Envoie les données au serveur
-                fetch('/api/save-device', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ brand, model })
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Erreur lors de l\'envoi des données');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    alert(data.message);
-                    form.reset(); // Réinitialise le formulaire après envoi réussi
-                })
-                .catch(error => {
-                    console.error('Erreur:', error);
-                    alert('Une erreur s\'est produite lors de l\'enregistrement de l\'appareil.');
-                });
-            });
         });
+        
     </script>
 </body>
 
