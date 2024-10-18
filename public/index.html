@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boutique RepairMarket</title>
     <style>
+.container {
+  display: flex;       /* Active Flexbox */
+  flex-direction: row; /* Organise les éléments en ligne */
+  gap: 20px;           /* Espacement entre les cartes (facultatif) */
+}
       
 .card2 {
   --font-color: #323232;
@@ -139,6 +144,7 @@
     <main>
         <h2>Nos Produits</h2>
             <!-- Intégration de la carte produit -->
+             <div class="container">
             <div class="card2">
                 <div class="card-img">
                     <div class="img"></div>
@@ -179,6 +185,66 @@
                     </button>
                 </div>
             </div>
+            <div class="card2">
+              <div class="card-img">
+                  <div class="img"></div>
+                  <img src="https://www.apple.com/newsroom/images/2024/09/apple-introduces-iphone-16-and-iphone-16-plus/article/geo/Apple-iPhone-16-hero-geo-240909_inline.jpg.large.jpg" alt="MacBook Pro" />
+              </div>
+              <div class="card-title">Iphone 16</div>
+              <div class="card-subtitle">Smartphone 5G-LTE IP68 Dual SIM - Apple A18 Hexa-Core - Ecran Super Retina XDR OLED 6.1" 1179 x 2556 - 256 Go - NFC/Bluetooth 5.3 - iOS 18.</div>
+              <hr class="card-divider">
+              <div class="card-footer">
+                  <div class="card-price"><span>$</span> 1099</div>
+                  <button class="card-btn" onclick="location.href='achat1.html'">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z"></path>
+                          <path d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
+                          <path d="m368.42 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
+                          <path d="m158.08 165.49a15 15 0 0 1 -14.23-10.26l-25.71-77.23h-47.44a15 15 0 1 1 0-30h58.3a15 15 0 0 1 14.23 10.26l29.13 87.49a15 15 0 0 1 -14.23 19.74z"></path>
+                      </svg>
+                  </button>
+              </div>
+          </div>
+          <div class="card2">
+            <div class="card-img">
+                <div class="img"></div>
+                <img src="https://www.apple.com/newsroom/images/2024/09/apple-introduces-iphone-16-and-iphone-16-plus/article/geo/Apple-iPhone-16-hero-geo-240909_inline.jpg.large.jpg" alt="MacBook Pro" />
+            </div>
+            <div class="card-title">Iphone 16</div>
+            <div class="card-subtitle">Smartphone 5G-LTE IP68 Dual SIM - Apple A18 Hexa-Core - Ecran Super Retina XDR OLED 6.1" 1179 x 2556 - 256 Go - NFC/Bluetooth 5.3 - iOS 18.</div>
+            <hr class="card-divider">
+            <div class="card-footer">
+                <div class="card-price"><span>$</span> 1099</div>
+                <button class="card-btn" onclick="location.href='achat1.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z"></path>
+                        <path d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
+                        <path d="m368.42 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
+                        <path d="m158.08 165.49a15 15 0 0 1 -14.23-10.26l-25.71-77.23h-47.44a15 15 0 1 1 0-30h58.3a15 15 0 0 1 14.23 10.26l29.13 87.49a15 15 0 0 1 -14.23 19.74z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="card2">
+          <div class="card-img">
+              <div class="img"></div>
+              <img src="https://www.apple.com/newsroom/images/2024/09/apple-introduces-iphone-16-and-iphone-16-plus/article/geo/Apple-iPhone-16-hero-geo-240909_inline.jpg.large.jpg" alt="MacBook Pro" />
+          </div>
+          <div class="card-title">Iphone 16</div>
+          <div class="card-subtitle">Smartphone 5G-LTE IP68 Dual SIM - Apple A18 Hexa-Core - Ecran Super Retina XDR OLED 6.1" 1179 x 2556 - 256 Go - NFC/Bluetooth 5.3 - iOS 18.</div>
+          <hr class="card-divider">
+          <div class="card-footer">
+              <div class="card-price"><span>$</span> 1099</div>
+              <button class="card-btn" onclick="location.href='achat1.html'">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <path d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z"></path>
+                      <path d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
+                      <path d="m368.42 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
+                      <path d="m158.08 165.49a15 15 0 0 1 -14.23-10.26l-25.71-77.23h-47.44a15 15 0 1 1 0-30h58.3a15 15 0 0 1 14.23 10.26l29.13 87.49a15 15 0 0 1 -14.23 19.74z"></path>
+                  </svg>
+              </button>
+          </div>
+      </div>
         </div>
     </main>
     <script src="js/main.js"></script>
